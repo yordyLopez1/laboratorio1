@@ -1,0 +1,62 @@
+#include <iostream>
+#include <cmath>
+
+
+using namespace std;
+
+// Declaración de funciones
+void realizarOperacion(double num1, double num2, char operador);
+void imprimirResultado(double resultado);
+
+int main() {
+    double num1, num2;
+    char operador;
+
+    cout << "Ingrese el primer numero: ";
+    cin >> num1;
+    cout << "Ingrese el operador (+, -, *, /, %): ";
+    cin >> operador;
+    cout << "Ingrese el segundo numero: ";
+    cin >> num2;
+
+    realizarOperacion(num1, num2, operador);
+
+    return 0;
+}
+
+// Implementacion de la función para realizar operaciones matemáticas
+void realizarOperacion(double num1, double num2, char operador) {
+ 
+    switch (operador) {
+        case '+':
+            resultado = num1 + num2;
+            break;
+        case '-':
+            resultado = num1 - num2;
+            break;
+		case '*':
+			resultado = num1 * num2;
+			break;
+		case '/':
+		if (num2 != 0){
+			resultado = num1 / num2;
+		} else {
+			cout <<"No se pudo hacer la division por cero" << endl;
+			return;
+		}
+		case '%':
+            resultado = fmod(num1, num2);
+            break;
+		 default:
+            cout << "Operador invalido" << endl;
+            return;
+	}	
+ imprimirResultado(resultado);
+}
+
+// Implementación de la función para imprimir los resultados
+void imprimirResultado(double resultado) {
+    cout << "El resultado es: " << resultado << endl;
+}
+			
+
